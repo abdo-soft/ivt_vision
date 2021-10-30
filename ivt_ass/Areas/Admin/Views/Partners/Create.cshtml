@@ -1,0 +1,49 @@
+﻿@model Core.Entities.Partners
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div style="margin-left:160px">
+    <h1>Create</h1>
+
+    <h4>Partners</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="PName" class="control-label"></label>
+                    <input asp-for="PName" class="form-control" />
+                    <span asp-validation-for="PName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PEmail" class="control-label"></label>
+                    <input asp-for="PEmail" class="form-control" />
+                    <span asp-validation-for="PEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PPhone" class="control-label"></label>
+                    <input asp-for="PPhone" class="form-control" />
+                    <span asp-validation-for="PPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="categoryName" class="control-label"></label>
+                    <input asp-for="categoryName" class="form-control" />
+                    <span asp-validation-for="categoryName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
